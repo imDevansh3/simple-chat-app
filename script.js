@@ -64,12 +64,12 @@ document.getElementById("messageInput").addEventListener("keyup", (event) => {
 const appendChatMessage = (messageNode) => {
     const messagesDiv = document.querySelector(".messages");
     messagesDiv.appendChild(messageNode);
-    messagesDiv.scrollTop = messagesDiv.scrollHeight; // Scroll to the bottom to see the latest message
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
 };
 
 socket.on("chat message", (msg) => {
     const newMessageDiv = document.createElement("div");
-    newMessageDiv.className = "message received"; // You might want to differentiate between sent and received messages.
+    newMessageDiv.className = "message received";
     newMessageDiv.textContent = msg;
     appendChatMessage(newMessageDiv);
 });
